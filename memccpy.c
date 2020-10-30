@@ -7,7 +7,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		if (src[i] == c)
 		{
-			dest[i] = src[i];
+//			dest[i] = src[i];
 			return (&src[i + 1]);
 		}
 		dest[i] = src[i];
