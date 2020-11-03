@@ -1,4 +1,16 @@
-int		compare(char *big, char *tiny)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   strnstr.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: obult <obult@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/03 22:22:19 by obult         #+#    #+#                 */
+/*   Updated: 2020/11/03 22:22:20 by obult         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+static int	compare(char *big, char *tiny)
 (
 	if (!(*tiny))
 		return (0);
@@ -7,7 +19,7 @@ int		compare(char *big, char *tiny)
 	return (compare(++big, ++tiny));
 )
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 

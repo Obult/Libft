@@ -1,4 +1,16 @@
-int		charcheck(char	tch, char *check)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   atoi.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: obult <obult@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/03 22:18:01 by obult         #+#    #+#                 */
+/*   Updated: 2020/11/03 22:18:04 by obult         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+static int		charcheck(char	tch, char *check)
 {
 	if (!(*check))
 		return (0);
@@ -7,7 +19,7 @@ int		charcheck(char	tch, char *check)
 	return (charcheck(tch, ++check));
 }
 
-int		ft_atoi(const char *nptr)
+int				ft_atoi(const char *nptr)
 {
 	int		i;
 	int		plus;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: obult <obult@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/03 22:19:32 by obult         #+#    #+#                 */
+/*   Updated: 2020/11/03 22:19:33 by obult         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 static void	ft_putdig_fd(int dig, int fd)
@@ -24,13 +36,4 @@ void		ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		ft_putnbr_fd(n * -1, fd);
 	}
-}
-
-int			main(void)
-{
-	int		p;
-
-	p = 1;
-	ft_putnbr_fd(p, 1);
-	return (0);
 }
