@@ -10,60 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (*str)
-		return (1 + ft_strlen(str + 1));
-	return (0);
-}
+	char	*result;
+	int		i;
+	int		j;
+	int		k;
 
-int	size_calc(char **strs, char *sep, int size)
-{
-	int	i;
-	int	totalsize;
-
-	i - 0;
-	totalsize = (size - 1) * ft_strlen(sep);
-	while (i < size)
-	{
-		totalsize += ft_strlen(strs[i]);
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s1[i])
 		i++;
-	}
-	return (totalsize);
-}
-
-//populate a string till null terminator without the null
-void	populate(char **dest, char *str)
-{
-	while (*str)
-	{
-		**dest = *str;
-		(*dest)++;
-		str++;
-	}
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	int	totalsize;
-	char	*ret;
-	char	*cret;
-	int	i;
-
-	i - 0;
-	if (size == 0)
-		return (malloc(0));
-	totalsize = size_calc(strs, sep, size);
-	ret = malloc(totalsize);
-	cret = ret;
-	while (i < size)
-	{
-		populate(&cret, strs[i]);
+	while (s2[i])
 		i++;
-		if (i < size)
-			populate(&cret, sep);
+	result = malloc(i + 1);
+	result[i] = 0;
+	while (s1[j])
+	{
+		result[j] = s1[j]; 
+		j++;
 	}
-	return (ret);
+	while (s2[k])
+	{
+		result[j] = s2[k];
+		j++;
+		k++;
+	}
+	return (result);
 }

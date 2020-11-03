@@ -56,23 +56,24 @@ void	arrange(char *str, char *set, char **pnts, char *bst)
 		}
 	}
 }
-
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	char	**pnts;
 	char	*bst;
-	int	tsize;
-	int	words;
+	int		tsize;
+	int		words;
+	char	*charset;
 
 	tsize = 0;
 	words = 0;
-	countloop(str, charset, &tsize, &words);
-	printf("%i\n%i\n",tsize ,words);
+	charset[0] = c;
+	charset[1] = 0;
+	countloop(s, charset, &tsize, &words);
 	if(words)
 	{
 		bst = malloc(tsize + words);
 		pnts = malloc((words + 1) * 4);
-		arrange(str, charset, pnts, bst);
+		arrange(s, charset, pnts, bst);
 		return (pnts);
 	}
 	return (0);
