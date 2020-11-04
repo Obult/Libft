@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:22:29 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:22:30 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 18:33:33 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (c == 0)
-		return (&s[i]);
+		return ((char *)s + i);
 	if (t < 0)
 		return (0);
-	return (&s[t]);
+	return ((char *)s + t);
 }

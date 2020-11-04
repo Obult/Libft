@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 11:44:24 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 18:27:11 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ char			*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1);
-	while (inset(s1[len], set))
+	while (inset(s1[len], (char *)set))
 		len--;
-	while (inset(s1[i], set))
+	while (inset(s1[i], (char *)set))
 		i++;
 	len = len - i;
 	result = malloc(len + 1);

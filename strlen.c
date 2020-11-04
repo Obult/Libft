@@ -6,9 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:22:06 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:22:08 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 18:31:28 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {

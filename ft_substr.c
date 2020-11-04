@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:13 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 11:45:03 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 18:28:35 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
-	substart = &s[start];
+	substart = (char *)s + start;
 	while (substart[i] && i < len)
 		i++;
 	result = malloc(i + 1);

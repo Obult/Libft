@@ -6,10 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 18:07:05 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 11:41:27 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 18:25:01 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -17,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	int		len;
 	int		j;
-	int		k;
+	int		i;
 
 	i = 0;
 	j = 0;

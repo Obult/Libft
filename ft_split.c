@@ -6,34 +6,24 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:19:46 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 23:15:43 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 21:59:56 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static int		check_set(char ct, char *set)
-{
-	while (*set)
-	{
-		if (*set == ct)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-static void		countloop(char *str, char *set, int *tot, int *wds)
+static void		countloop(char *str, char c, int *tot, int *wds)
 {
 	while (*str)
 	{
-		while (check_set(*str, set))
+		while (*str == c)
 		{
 			str++;
 		}
-		if (!(check_set(*str, set)) && *str)
+		if (*str != c && *str)
 			(*wds)++;
-		while (!(check_set(*str, set)) && *str)
+		while (*str != c && *str)
 		{
 			(*tot)++;
 			str++;
@@ -41,22 +31,22 @@ static void		countloop(char *str, char *set, int *tot, int *wds)
 	}
 }
 
-static void		arrange(char *str, char *set, char **pnts, char *bst)
+static char		**arrange(char *str, char c, char **pnts, char *bst)
 {
 	int	i;
 
 	i = 0;
 	while (*str)
 	{
-		while (check_set(*str, set))
+		while (*str == c)
 		{
 			str++;
 		}
-		if (!(check_set(*str, set)) && *str)
+		if (*str != c && *str)
 		{
 			pnts[i] = bst;
 			i++;
-			while (!(check_set(*str, set)) && *str)
+			while (*str != c && *str)
 			{
 				*bst = *str;
 				bst++;
@@ -66,6 +56,7 @@ static void		arrange(char *str, char *set, char **pnts, char *bst)
 			bst++;
 		}
 	}
+	return (pnts);
 }
 
 char			**ft_split(char const *s, char c)
@@ -74,18 +65,15 @@ char			**ft_split(char const *s, char c)
 	char	*bst;
 	int		tsize;
 	int		words;
-	char	*charset;
 
 	tsize = 0;
 	words = 0;
-	charset[0] = c;
-	charset[1] = 0;
-	countloop(s, charset, &tsize, &words);
+	countloop((char *)s, c, &tsize, &words);
 	if (words)
 	{
 		bst = malloc(tsize + words);
 		pnts = malloc((words + 1) * 4);
-		arrange(s, charset, pnts, bst);
+		pnts = arrange((char *)s, c, pnts, bst);
 		return (pnts);
 	}
 	return (0);
