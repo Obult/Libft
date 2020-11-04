@@ -6,9 +6,12 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:20:08 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 11:44:24 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "libft.h"
 
 static int		inset(char c, char *set)
 {

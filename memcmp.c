@@ -6,19 +6,25 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:11 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:21:12 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 12:20:52 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
+	char	*cs1;
+	char	*cs2;
 
 	i = 0;
+	cs1 = (char *)s1;
+	cs2 = (char *)s2;
 	while (i < n)
 	{
-		if (s1[i] - s2[i])
-			return (s1[i] - s2[i]);
+		if (cs1[i] - cs2[i])
+			return (cs1[i] - cs2[i]);
 		i++;
 	}
 	return (0);

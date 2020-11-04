@@ -6,9 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:54 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:18:55 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 11:37:56 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 static	int	digits(int n)
 {

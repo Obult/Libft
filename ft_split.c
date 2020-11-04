@@ -6,12 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:19:46 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:19:50 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/03 23:15:43 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 static int		check_set(char ct, char *set)
 {

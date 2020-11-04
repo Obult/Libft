@@ -6,9 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 18:07:05 by obult         #+#    #+#                 */
-/*   Updated: 2020/09/02 18:14:29 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 11:41:27 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

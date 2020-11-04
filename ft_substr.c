@@ -6,9 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:13 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:20:14 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 11:45:03 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

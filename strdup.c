@@ -6,9 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:45 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 22:21:46 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 14:32:20 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
