@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:01 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 23:54:41 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/04 22:09:40 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int				ft_atoi(const char *nptr)
 	i = 0;
 	plus = 1;
 	result = 0;
-	while (charcheck(nptr[i], " \t"))
+	while (charcheck(nptr[i], " \t\n"))
 		i++;
 	if (charcheck(nptr[i], "-+"))
 	{

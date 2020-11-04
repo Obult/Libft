@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/04 18:16:24 by obult         ########   odam.nl          #
+#    Updated: 2020/11/04 22:02:41 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,5 @@ re:			fclean all
 
 ${NAME}:		${OBJS}
 				${LIB} ${NAME} ${OBJS}
-
-libft.so:
 
 .PHONY: all clean fclean re
