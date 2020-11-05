@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static int	ft_compare(char *big, char *tiny)
+static int	ft_compare(unsigned char *big, unsigned char *tiny)
 {
 	if (!(*tiny))
 		return (1);
@@ -24,13 +25,17 @@ static int	ft_compare(char *big, char *tiny)
 char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < len)
+	j = ft_strlen(little);
+	if (!(little[0]))
+		return ((char *)big);
+	while (i < len - j)
 	{
-		if (ft_compare((char *)&big[i], (char *)little))
+		if (ft_compare((unsigned char *)&big[i], (unsigned char *)little))
 			return ((char *)&big[i]);
 		i++;
 	}
-	return (0);
+	return (0);		
 }

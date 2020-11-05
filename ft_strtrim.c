@@ -37,17 +37,21 @@ char			*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1);
-	while (inset(s1[len], (char *)set))
-		len--;
 	while (inset(s1[i], (char *)set))
 		i++;
+	// if (!s1[i])
+	// 	return (0);
+	while (inset(s1[len - 1], (char *)set))
+		len--;
 	len = len - i;
 	result = malloc(len + 1);
+	if (!result)
+		return (0);
 	while (j < len)
 	{
 		result[j] = s1[i + j];
 		j++;
 	}
-	result[j] = 0;
+	result[len] = 0;
 	return (result);
 }

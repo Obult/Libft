@@ -28,7 +28,7 @@ int				ft_atoi(const char *nptr)
 	i = 0;
 	plus = 1;
 	result = 0;
-	while (charcheck(nptr[i], " \t\n"))
+	while (charcheck(nptr[i], " \t\v\r\f\n"))
 		i++;
 	if (charcheck(nptr[i], "-+"))
 	{

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static	int	digits(int n)
 {
@@ -33,10 +34,12 @@ static char	*neg_itoa(int n)
 	if (n == 0)
 		return ("0");
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	n = n * -1;
 	len = digits(n) + 1;
 	result = malloc(len + 1);
+	if (!result)
+		return (0);
 	result[len] = 0;
 	result[0] = '-';
 	while (n)
@@ -57,6 +60,8 @@ char		*ft_itoa(int n)
 		return (neg_itoa(n));
 	len = digits(n);
 	result = malloc(len + 1);
+	if (!result)
+		return (0);
 	result[len] = 0;
 	while (n)
 	{
