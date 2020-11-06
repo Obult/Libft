@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/04 22:02:41 by obult         ########   odam.nl          #
+#    Updated: 2020/11/05 21:13:21 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,10 @@ fclean:		clean
 
 re:			fclean all
 
-${NAME}:		${OBJS}
+${NAME}:	${OBJS}
 				${LIB} ${NAME} ${OBJS}
+
+so:	${OBJS}
+				${LIB} $@ ${OBJS}
 
 .PHONY: all clean fclean re

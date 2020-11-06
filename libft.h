@@ -6,12 +6,18 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 17:16:27 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/05 12:21:03 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/06 00:26:15 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
