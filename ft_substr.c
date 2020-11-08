@@ -23,8 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	j = 0;
 	substart = (char *)s + start;
-	if (start >= (unsigned int)ft_strlen(s))
-		return (0);
+	if (start >= ft_strlen(s))
+		substart = (char *)s + ft_strlen(s);
 	while (substart[i] && i < len)
 		i++;
 	result = malloc(i + 1);

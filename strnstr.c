@@ -25,17 +25,17 @@ static int	ft_compare(unsigned char *big, unsigned char *tiny)
 char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	j;
+	size_t	l_len;
 
 	i = 0;
-	j = ft_strlen(little);
-	if (!(little[0]))
-		return ((char *)big);
-	while (i < len - j)
+	l_len = ft_strlen(little);
+	while (i <= len - l_len && big[i])
 	{
 		if (ft_compare((unsigned char *)&big[i], (unsigned char *)little))
+		{
 			return ((char *)&big[i]);
+		}
 		i++;
 	}
-	return (0);		
+	return (0);	
 }
