@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/05 21:13:21 by obult         ########   odam.nl          #
+#    Updated: 2020/11/04 22:02:41 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,11 @@ SRCS	= ./isalnum.c ./isalpha.c ./isascii.c ./isdigit.c ./isprint.c ./atoi.c \
 ./memset.c ./strchr.c ./strdup.c ./strlcat.c ./strlcpy.c ./strlen.c \
 ./strncmp.c ./strnstr.c ./strrchr.c ./tolower.c ./toupper.c
 
+BONUS	= ./bonus/list.c
+
 OBJS	= ${SRCS:.c=.o}
+
+BOBJS	= ${BONUS:.c=.o}
 
 CC		= gcc
 
@@ -43,10 +47,10 @@ fclean:		clean
 
 re:			fclean all
 
-${NAME}:	${OBJS}
+${NAME}:		${OBJS}
 				${LIB} ${NAME} ${OBJS}
 
-so:	${OBJS}
-				${LIB} $@ ${OBJS}
+bonus:		all ${BOBJS}
+				${LIB} ${NAME} ${BOBJS}
 
 .PHONY: all clean fclean re

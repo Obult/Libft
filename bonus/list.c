@@ -25,6 +25,8 @@ t_list		*ft_lstnew(void *content)
 	t_list	*n_list;
 
 	n_list = malloc(sizeof(t_list));
+	if (!n_list)
+		return (0);
 	n_list->content = content;
 	n_list->next = 0;
 	return (n_list);
@@ -58,9 +60,11 @@ int			ft_lstsize(t_list *lst)
 
 t_list		*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (0);
 	if (!(lst->next))
 		return (lst);
-	return (ft_lstsize(lst->next));
+	return (ft_lstlast(lst->next));
 }
 
 /*
@@ -72,7 +76,10 @@ void		ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*last;
 
 	last = ft_lstlast(*lst);
-	last->next = new;
+	if (last)
+		last->next = new;
+	else
+		*lst = new;
 }
 
 /*
@@ -84,7 +91,7 @@ void		ft_lstadd_back(t_list **lst, t_list *new)
 
 void		ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst);
+	del(lst->content);
 	free(lst);
 }
 
@@ -98,9 +105,13 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*))
 
 void		ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if ((*lst)->next)
-		ft_lstclear(&((*lst)->next), del);
-	ft_lstdelone(*lst, del);
+	if (*lst->next)
+	{
+		ft_lstclear(&(*lst->next), del);
+		free(*lst->next);
+	}
+	del(*lst->content);
+	*lst = 0;
 }
 
 /*
@@ -110,9 +121,11 @@ void		ft_lstclear(t_list **lst, void (*del)(void*))
 
 void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	f(lst);
-	if (lst->next)
+	if (lst)
+	{
+		f(lst->content);
 		ft_lstiter(lst->next, f);
+	}
 }
 
 /*
