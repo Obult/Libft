@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/04 22:02:41 by obult         ########   odam.nl          #
+#    Updated: 2020/11/12 21:46:55 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS	= ./isalnum.c ./isalpha.c ./isascii.c ./isdigit.c ./isprint.c ./atoi.c \
 ./memset.c ./strchr.c ./strdup.c ./strlcat.c ./strlcpy.c ./strlen.c \
 ./strncmp.c ./strnstr.c ./strrchr.c ./tolower.c ./toupper.c
 
-BONUS	= ./bonus/list.c
+BONUS	= ./bonuslist0.c ./bonuslist1.c
 
 OBJS	= ${SRCS:.c=.o}
 

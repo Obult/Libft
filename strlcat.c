@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:52 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 18:35:19 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/12 21:18:32 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dst_size)
 	size_t		i;
 
 	i = 0;
-	dst_len	= ft_strlen(dst);
+	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	extra_size = dst_size - dst_len;
 	if (dst_len >= dst_size)

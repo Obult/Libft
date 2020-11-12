@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 18:27:11 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/12 21:24:34 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	result = malloc(len + 1);
 	if (!result)
 		return (0);
-	while (j < len)
-	{
-		result[j] = s1[i + j];
-		j++;
-	}
+	result = ft_memcpy(result, (char *)&s1[i], len);
 	result[len] = 0;
 	return (result);
 }

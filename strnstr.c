@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:22:19 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/03 23:49:38 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/12 21:17:59 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-	return (0);	
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 18:07:05 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 18:25:01 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/12 21:34:30 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
-	int		len;
 	int		j;
 	int		i;
 
@@ -24,11 +23,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (!s1 || !s2)
 		return (0);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	result = malloc(len + 1);
+	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!result)
 		return (result);
-	result[len] = 0;
+	result[ft_strlen(s1) + ft_strlen(s2)] = 0;
 	while (s1[i])
 	{
 		result[i] = s1[i];
