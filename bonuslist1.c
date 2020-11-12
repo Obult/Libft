@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:45:06 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/12 21:46:31 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/12 21:55:46 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ void		ft_lstiter(t_list *lst, void (*f)(void *))
 **	delete the content of an element if needed.
 */
 
-t_list		*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *))
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list		*new;
 
-	if (l)
+	if (lst)
 	{
-		new = ft_lstnew(f(l->content));
+		new = ft_lstnew(f(lst->content));
 		if (!new)
 			return ((t_list *)-1);
-		new->next = ft_lstmap(l->next, f, del);
+		new->next = ft_lstmap(lst->next, f, del);
 		if (new->next == (t_list *)-1)
 		{
 			del(new);
