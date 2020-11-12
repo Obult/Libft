@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substart;
 	char	*result;
 
+	if (!s)
+		return (0);
 	i = 0;
 	j = 0;
 	substart = (char *)s + start;

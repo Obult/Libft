@@ -14,94 +14,90 @@
 //#include "libft.h"
 #include <stdio.h>
 
-static void		*ft_memcpy(void *dest, const void *src, size_t n)
+static char		*ft_strndup(const char *s, int len)
 {
-	size_t	i;
-	char	*cdest;
-	char	*csrc;
+	int		i;
+	char	*temp;
 
 	i = 0;
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	if (dest == 0 && src == 0)
-		return (0);
-	while (i < n)
+	temp = malloc(len + 1);
+	if (!temp)
+		return (temp);
+	while (i < len)
 	{
-		cdest[i] = csrc[i];
+		temp[i] = s[i];
 		i++;
 	}
-	return (dest);
+	temp[len] = '\0';
+	return (temp);
 }
 
-static int		ft_strclen(char *str, char c)
+static int		ft_strclen(const char *str, char c)
 {
 	if (*str && *str != c)
 		return (1 + ft_strclen(str + 1, c));
 	return (0);
 }
 
-static void		countloop(char *str, char c, int *tot, int *wds)
+static int		countloop(char *str, char c)
 {
+	int		wrds;
+
+	wrds = 0;
 	while (*str)
 	{
 		while (*str == c)
-		{
 			str++;
-		}
 		if (*str != c && *str)
-			(*wds)++;
+			wrds++;
 		while (*str != c && *str)
-		{
-			(*tot)++;
 			str++;
-		}
 	}
+	return (wrds);
 }
 
-static int		arrange(char **pnt, char *s, char c)
+static char		**arrange(char **pnt, const char *s, char c)
 {
-	int		len;
+	int		i;
 
-	while (*s == c)
-		s++;
-	if (!(*s))
-		return (1);
-	len = ft_strclen(s, c);
-	printf("%i", len);
-	*pnt = malloc(len + 1);
-	if (!(*pnt))
-		return (0);
-	*pnt = ft_memcpy(pnt[0], s, len);
-	pnt[len] = 0;
-	if (arrange(&pnt[1], s + len, c))
-		return (1);
-	free(*pnt);
-	return (0);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+			pnt[i] = ft_strndup(s, ft_strclen(s, c));
+		if (*s)
+			i++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (pnt);
 }
 
 char			**ft_split(char const *s, char c)
 {
 	char	**pnts;
-	int		tsize;
 	int		words;
 
-	tsize = 0;
-	words = 0;
-	countloop((char *)s, c, &tsize, &words);
-	pnts = malloc(words);
+	words = countloop((char *)s, c);
+	printf("words: %i\n", words);
+	pnts = malloc(4 * (words + 1));
 	if (!pnts)
 		return (0);
-	if (arrange(pnts, (char *)s, c))
+	pnts[words] = 0;
+	pnts = arrange(pnts, s, c);
+	if (pnts)
 		return (pnts);
 	free(pnts);
 	return (0);
 }
 
-int				main(void)
-{
-	char	**pointers;
+// int				main(void)
+// {
+// 	char	**pointers;
 
-	pointers = ft_split("cannotbcthestringtolonghey you try to split this string", ' ');
-	printf("%s\n%s\n%s\n", pointers[0], pointers[1], pointers[6]);
-	exit(0);
-}
+// 	pointers = ft_split("shortwordsalotofwordsagain wrd try to split this string", ' ');
+// 	printf("%s\n%s\n%s\n", pointers[0], pointers[1], pointers[6]);
+// 	exit(0);
+// }

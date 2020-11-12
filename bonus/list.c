@@ -39,6 +39,8 @@ t_list		*ft_lstnew(void *content)
 
 void		ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst || !new)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }
@@ -103,14 +105,32 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*))
 **	NULL.
 */
 
+// void		ft_lstclear(t_list **lst, void (*del)(void*))
+// {
+// 	t_list		*temp;
+	
+// 	temp = *lst;
+// 	if (temp->next)
+// 	{
+// 		ft_lstclear(&(temp->next), del);
+// 		free(temp->next);
+// 	}
+// 	del(temp->content);
+// 	*lst = 0;
+// }
+
 void		ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (*lst->next)
+	t_list		*temp;
+	
+	temp = *lst;
+	if (temp->next)
 	{
-		ft_lstclear(&(*lst->next), del);
-		free(*lst->next);
+		ft_lstclear(&(temp->next), del);
+
 	}
-	del(*lst->content);
+	free(temp);
+	del(temp->content);
 	*lst = 0;
 }
 

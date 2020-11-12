@@ -31,17 +31,18 @@ int				ft_atoi(const char *nptr)
 	while (charcheck(nptr[i], " \t\v\r\f\n"))
 		i++;
 	if (charcheck(nptr[i], "-+"))
-	{
 		if (nptr[i] == '-')
 			plus = -1;
+	if (charcheck(nptr[i], "-+"))
 		i++;
-	}
 	while (charcheck(nptr[i], "0123456789"))
 	{
-		result = result * 10;
-		result = result + nptr[i] - 48;
+		if (result > (2147483648 / 10) && plus == -1)
+			return (0);
+		if (result > (2147483647 / 10))
+			return (-1);
+		result = result * 10 + nptr[i] - 48;
 		i++;
 	}
-	result = result * plus;
-	return (result);
+	return (result * plus);
 }

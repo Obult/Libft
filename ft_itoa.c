@@ -18,6 +18,8 @@ static	int	digits(int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		i++;
 	while (n)
 	{
 		i++;
@@ -32,7 +34,7 @@ static char	*neg_itoa(int n)
 	char	*result;
 
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n = n * -1;
