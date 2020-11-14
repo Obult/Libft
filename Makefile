@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/14 13:53:59 by obult         ########   odam.nl          #
+#    Updated: 2020/11/14 15:52:00 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ SRCS	= ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c ./ft_isprint.
 ./ft_memset.c ./ft_strchr.c ./ft_strdup.c ./ft_strlcat.c ./ft_strlcpy.c ./ft_strlen.c \
 ./ft_strncmp.c ./ft_strnstr.c ./ft_strrchr.c ./ft_tolower.c ./ft_toupper.c
 
-BONUS	= ./bonuslist0.c ./bonuslist1.c
+BONUS	= ./ft_lstadd_back.c ./ft_lstadd_front.c ./ft_lstclear.c ./ft_lstdelone.c \
+./ft_lstiter.c ./ft_lstlast.c ./ft_lstmap.c ./ft_lstnew.c ./ft_lstsize.c
 
-OBJS	= ${SRCS:.c=.o}
+REG_OBJS	= ${SRCS:.c=.o}
 
-BOBJS	= ${BONUS:.c=.o}
+BON_OBJS	= ${BONUS:.c=.o}
 
 CC		= gcc
 
@@ -35,22 +36,28 @@ CFLAGS	= -Wall -Werror -Wextra
 
 LIB		= ar -rsc
 
+ifdef WITH_BONUS
+OBJS = ${REG_OBJS} ${BON_OBJS}
+else
+OBJS = ${REG_OBJS}
+endif
+
 all:		${NAME}
 
 .c.o:
 				${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
 clean:
-				${RM} ${OBJS} ${BOBJS}
+				${RM} ${REG_OBJS} ${BON_OBJS}
 
 fclean:		clean
 				${RM} ${NAME}
 
 re:			fclean all
 
-${NAME}:		${OBJS}
-				${LIB} ${NAME} ${OBJS}
+${NAME}:	${OBJS}
+				${LIB} $@ $^
 
-bonus:		all ${BOBJS}
-				${LIB} ${NAME} ${BOBJS}
+bonus:		all ${BON_OBJS}
+				${MAKE} WITH_BONUS=1 all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

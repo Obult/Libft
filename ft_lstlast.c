@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_lstlast.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/03 22:22:12 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 14:09:00 by obult         ########   odam.nl         */
+/*   Created: 2020/11/14 15:07:48 by obult         #+#    #+#                 */
+/*   Updated: 2020/11/14 15:16:03 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+/*
+**	Returns the last element of the list.
+*/
+
+t_list		*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && (s1[i] || s2[i]))
-	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
+	if (!lst)
+		return (0);
+	if (!(lst->next))
+		return (lst);
+	return (ft_lstlast(lst->next));
 }
