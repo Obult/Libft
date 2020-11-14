@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/14 13:34:10 by obult         ########   odam.nl          #
+#    Updated: 2020/11/14 13:53:59 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ all:		${NAME}
 .c.o:
 				${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
 clean:
-				${RM} ${OBJS} ${BONUS}
+				${RM} ${OBJS} ${BOBJS}
 
 fclean:		clean
 				${RM} ${NAME}
