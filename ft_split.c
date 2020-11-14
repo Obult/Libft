@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_splittt.c                                       :+:    :+:            */
+/*   ft_split.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/12 21:37:00 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/14 13:49:34 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static char			*ft_strndup(const char *s, int len)
-{
-	int		i;
-	char	*temp;
-
-	i = 0;
-	temp = malloc(sizeof(char) * (len + 1));
-	if (!temp)
-		return (temp);
-	while (i < len)
-	{
-		temp[i] = s[i];
-		i++;
-	}
-	temp[len] = '\0';
-	return (temp);
-}
+#include "libft.h"
 
 static int			ft_strclen(const char *str, char c)
 {
@@ -54,6 +37,18 @@ static int			countloop(char *str, char c)
 	return (wrds);
 }
 
+static void			ft_freeer(char **pnt, int n)
+{
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(pnt[i]);
+		i++;
+	}
+}
+
 static char			**arrange(char **pnt, const char *s, char c)
 {
 	int		i;
@@ -64,7 +59,14 @@ static char			**arrange(char **pnt, const char *s, char c)
 		while (*s == c)
 			s++;
 		if (*s)
-			pnt[i] = ft_strndup(s, ft_strclen(s, c));
+		{
+			pnt[i] = ft_substr(s, 0, ft_strclen(s, c));
+			if (!(pnt[i]))
+			{
+				ft_freeer(pnt, i);
+				return (0);
+			}
+		}
 		if (*s)
 			i++;
 		while (*s && *s != c)
