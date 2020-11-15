@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/15 17:20:41 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/15 23:52:50 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,8 @@ static char			**arrange(char **pnt, const char *s, char c)
 				ft_freeer(pnt, i);
 				return (0);
 			}
-		}
-		if (*s)
 			i++;
+		}
 		while (*s && *s != c)
 			s++;
 	}
@@ -87,7 +86,7 @@ char				**ft_split(char const *s, char c)
 	pnts = malloc(sizeof(char *) * (words + 1));
 	if (!pnts)
 		return (0);
-	pnts = arrange(pnts, s, c);
 	pnts[words] = 0;
+	pnts = arrange(pnts, s, c);
 	return (pnts);
 }

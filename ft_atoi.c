@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   atoi.c                                             :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:01 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 22:09:40 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/15 20:55:35 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int		charcheck(char tch, char *check)
 		return (0);
 	if (tch == *check)
 		return (1);
-	return (charcheck(tch, ++check));
+	return (charcheck(tch, check + 1));
 }
 
 int				ft_atoi(const char *nptr)
