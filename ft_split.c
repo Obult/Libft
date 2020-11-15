@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 13:49:34 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/15 17:20:41 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void			ft_freeer(char **pnt, int n)
 		free(pnt[i]);
 		i++;
 	}
+	free(pnt);
 }
 
 static char			**arrange(char **pnt, const char *s, char c)
@@ -88,8 +89,5 @@ char				**ft_split(char const *s, char c)
 		return (0);
 	pnts = arrange(pnts, s, c);
 	pnts[words] = 0;
-	if (pnts)
-		return (pnts);
-	free(pnts);
-	return (0);
+	return (pnts);
 }
