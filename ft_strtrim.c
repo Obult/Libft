@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/12 21:24:34 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/15 15:23:22 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 	int		len;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	if (!s1 || !set)
 		return (0);
 	len = ft_strlen(s1);
