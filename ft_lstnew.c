@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/14 15:04:06 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 15:16:18 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/19 14:09:49 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_list		*ft_lstnew(void *content)
 {
 	t_list	*n_list;
 
-	n_list = malloc(sizeof(t_list));
 	if (!n_list)
 		return (0);
+	n_list = malloc(sizeof(t_list));
 	n_list->content = content;
 	n_list->next = 0;
 	return (n_list);
