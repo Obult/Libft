@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memcpy.c                                           :+:    :+:            */
+/*   ft_memcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:18 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 14:05:34 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/20 11:21:22 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	char	*cdest;
-	char	*csrc;
 
 	i = 0;
-	csrc = (char *)src;
-	cdest = (char *)dest;
 	if (dest == 0 && src == 0)
 		return (0);
 	while (i < n)
 	{
-		cdest[i] = csrc[i];
+		(unsigned char *)dest[i] = (unsigned char *)src[i];
 		i++;
 	}
 	return (dest);

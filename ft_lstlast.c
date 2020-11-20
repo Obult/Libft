@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/14 15:07:48 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 15:16:03 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/20 11:14:11 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@
 
 t_list		*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
-	if (!(lst->next))
+	if (!lst || !(lst->next))
 		return (lst);
 	return (ft_lstlast(lst->next));
 }
