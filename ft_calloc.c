@@ -6,11 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:25 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:19:59 by oswin         ########   odam.nl         */
+/*   Updated: 2020/11/21 00:24:46 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
