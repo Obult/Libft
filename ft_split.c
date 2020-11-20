@@ -6,11 +6,10 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/15 23:52:50 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/21 00:27:01 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int			ft_strclen(const char *str, char c)

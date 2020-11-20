@@ -6,11 +6,10 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:13 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 18:28:35 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/21 00:46:43 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   strdup.c                                           :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:45 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/04 14:32:20 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/21 00:33:03 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
-	int		j;
+	int		len;
 	char	*temp;
 
-	i = 0;
-	j = 0;
-	while (s[i])
-		i++;
-	temp = malloc(i + 1);
+	len = ft_strlen(s);
+	temp = ft_calloc(len + 1, sizeof(char));
 	if (!temp)
 		return (temp);
-	while (j <= i)
-	{
-		temp[j] = s[j];
-		j++;
-	}
-	return (temp);
+	return (ft_memcpy(temp, s, len));
 }
