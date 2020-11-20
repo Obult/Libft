@@ -6,11 +6,10 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:54 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 14:03:43 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/21 00:07:48 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static	int	digits(int n)
