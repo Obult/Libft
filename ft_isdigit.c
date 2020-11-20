@@ -6,11 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:40 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/20 11:08:22 by oswin         ########   odam.nl         */
+/*   Updated: 2020/11/20 11:41:33 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9'));
+	return (c >= '0' && c <= '9');
 }

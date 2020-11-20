@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:25 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/20 11:23:11 by oswin         ########   odam.nl         */
+/*   Updated: 2020/11/20 11:46:53 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n)
 		{
 			n--;
-			(unsigned char *)dest[n] = (unsigned char *)src[n];
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
 		}
 		return (dest);
 	}
 	while (i < n)
 	{
-		(unsigned char *)dest[i] = (unsigned char *)src[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);
