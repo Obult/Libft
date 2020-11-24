@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/14 15:11:38 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 15:11:54 by obult         ########   odam.nl         */
+/*   Updated: 2020/11/24 14:46:46 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,16 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new = ft_lstnew(f(lst->content));
 		if (!new)
-			return ((t_list *)-1);
+			return (0);
 		new->next = ft_lstmap(lst->next, f, del);
-		if (new->next == (t_list *)-1)
+		if (!new->next)
 		{
 			del(new);
-			return ((t_list *)-1);
+			return (0);
 		}
+		if (new->next == -1)
+			new->next = 0;
 		return (new);
 	}
-	return (0);
+	return ((t_list)-1);
 }
