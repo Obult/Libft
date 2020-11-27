@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:27:01 by oswin         ########   odam.nl         */
+/*   Updated: 2020/11/26 12:28:36 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,10 @@ static int			countloop(char *str, char c)
 
 static void			ft_freeer(char **pnt, int n)
 {
-	int		i;
-
-	i = 0;
-	while (i < n)
+	while (n)
 	{
-		free(pnt[i]);
-		i++;
+		n--;
+		free(pnt[n]);
 	}
 	free(pnt);
 }

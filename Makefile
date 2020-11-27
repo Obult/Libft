@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2020/11/21 20:36:54 by oswin         ########   odam.nl          #
+#    Updated: 2020/11/25 15:58:01 by oswin         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ re:			fclean all
 ${NAME}:	${OBJS}
 				${LIB} $@ $^
 
-bonus:		all ${BON_OBJS}
+bonus:
 				${MAKE} WITH_BONUS=1 all
 
 .PHONY: all clean fclean re bonus
