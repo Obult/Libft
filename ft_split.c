@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:27:01 by oswin         ########   odam.nl         */
+/*   Updated: 2020/11/27 13:58:29 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,23 @@ static int			ft_strclen(const char *str, char c)
 	return (0);
 }
 
-static int			countloop(char *str, char c)
+int					count_words(char *s, char c, int wrds)
 {
-	int		wrds;
-
-	wrds = 0;
-	while (*str)
+	while (*s)
 	{
-		while (*str == c)
-			str++;
-		if (*str != c && *str)
+		if (*s != c && (*(s + 1) == c || *(s + 1) == 0))
 			wrds++;
-		while (*str != c && *str)
-			str++;
+		s++;
 	}
 	return (wrds);
 }
 
 static void			ft_freeer(char **pnt, int n)
 {
-	int		i;
-
-	i = 0;
-	while (i < n)
+	while (n)
 	{
-		free(pnt[i]);
-		i++;
+		n--;
+		free(pnt[n]);
 	}
 	free(pnt);
 }
@@ -81,7 +72,7 @@ char				**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	words = countloop((char *)s, c);
+	words = count_words((char *)s, c, 0);
 	pnts = malloc(sizeof(char *) * (words + 1));
 	if (!pnts)
 		return (0);
