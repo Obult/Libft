@@ -6,11 +6,10 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/15 15:23:22 by obult         ########   odam.nl         */
+/*   Updated: 2020/12/08 01:53:49 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int		inset(char c, char *set)
@@ -46,7 +45,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 	result = malloc(len + 1);
 	if (!result)
 		return (0);
-	result = ft_memcpy(result, (char *)&s1[i], len);
 	result[len] = 0;
-	return (result);
+	return (ft_memcpy(result, (char *)&s1[i], len));
 }
