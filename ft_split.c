@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/27 13:58:29 by oswin         ########   odam.nl         */
+/*   Updated: 2021/04/07 17:49:08 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ int					count_words(char *s, char c, int wrds)
 {
 	while (*s)
 	{
-		if (*s != c && (*(s + 1) == c || *(s + 1) == 0))
+		if (*str != c && (str[1] == c || !str[1]))
 			wrds++;
-		s++;
+		str++;
 	}
 	return (wrds);
 }
 
-static void			ft_freeer(char **pnt, int n)
+static void			ft_freeer(char **pnt, int i)
 {
-	while (n)
+	while (i)
 	{
-		n--;
-		free(pnt[n]);
+		i--;
+		free(pnt[i]);
 	}
 	free(pnt);
 }
@@ -77,6 +77,5 @@ char				**ft_split(char const *s, char c)
 	if (!pnts)
 		return (0);
 	pnts[words] = 0;
-	pnts = arrange(pnts, s, c);
-	return (pnts);
+	return (arrange(pnts, s, c));
 }

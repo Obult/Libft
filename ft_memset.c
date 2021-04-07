@@ -6,21 +6,18 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:32 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/20 11:47:07 by oswin         ########   odam.nl         */
+/*   Updated: 2020/12/08 01:42:47 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (n)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		n--;
+		((unsigned char *)s)[n] = (unsigned char)c;
 	}
 	return (s);
 }

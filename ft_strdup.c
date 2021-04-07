@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:21:45 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:33:03 by oswin         ########   odam.nl         */
+/*   Updated: 2020/12/08 01:46:49 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ char	*ft_strdup(const char *s)
 	char	*temp;
 
 	len = ft_strlen(s);
-	temp = ft_calloc(len + 1, sizeof(char));
+	temp = malloc((len + 1) * sizeof(char));
 	if (!temp)
 		return (temp);
+	temp[len] = 0;
 	return (ft_memcpy(temp, s, len));
 }
