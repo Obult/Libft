@@ -6,13 +6,17 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 17:16:27 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/19 14:02:07 by obult         ########   odam.nl         */
+/*   Updated: 2021/04/07 10:49:03 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 typedef struct	s_list
 {
@@ -64,5 +68,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 	void (*del)(void *));
+int				get_next_line(int fd, char **line);
 
 #endif
